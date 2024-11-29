@@ -19,6 +19,5 @@
 .center {
   background: rbga(64 ,64, 64, 0,15);
   border: 3px solid rbga(255 ,255, 255, 0,3);
-  padding: 80%;
   border-radius: 16px;
 }
