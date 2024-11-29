@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
-  background-image: url('../public/fond.jpg');
-  background-size: cover;
+  background-image: url('../public/r.jpeg');
   background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  padding: 4rem 0;
 }
 
 .title {
@@ -15,11 +16,9 @@
   font-size: 4rem;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.center {
+  background: rbga(64 ,64, 64, 0,15);
+  border: 3px solid rbga(255 ,255, 255, 0,3);
+  padding: 80%;
+  border-radius: 16px;
 }

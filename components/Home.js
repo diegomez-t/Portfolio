@@ -2,10 +2,10 @@ import styles from '../styles/Home.module.css';
 
 function Home() {
   return (
-    <div>
-      <main className={styles.main}>
-        <h1>Mon Portfolio</h1>
-      </main>
+    <div className={styles.main}>
+        <div className={styles.center}>
+          <h1 className={styles.title}>Mon Portfolio</h1>
+        </div>
     </div>
   );
 }
