@@ -8,7 +8,7 @@
   background-size: cover;
   width: 100vw;
   height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .title {
@@ -22,6 +22,7 @@
   width: 90%;
   height: 100%;
   color: white;
+  margin-right: 10px;
 }
 
 .menu{
@@ -33,6 +34,7 @@
   height: 50%;
   justify-content: space-around;
   margin-right: 20px;
+  margin-left: 10px;
 }
 .icon{
   color: white;
