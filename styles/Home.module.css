@@ -17,7 +17,11 @@
 }
 
 .center {
-  background: rbga(64 ,64, 64, 0,15);
+  background-color: rbga(64 ,64, 64, 0,15);
   border: 3px solid rbga(255 ,255, 255, 0,3);
   border-radius: 16px;
+  backdrop-filter: blur(25px);
+  width: 80%;
+  height: 90%;
+  color: white;
 }
