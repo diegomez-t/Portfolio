@@ -13,6 +13,7 @@
 
 .title {
   line-height: 1.15;
+  text-align: center;
 }
 
 .center {
@@ -40,4 +41,21 @@
   color: white;
   font-size: 22px;
   padding: 10px;
+  cursor: pointer;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; 
+  height: auto;
+  margin: 10px;
+}
+.profil, .texte {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 20px); /* Prend 50% de la largeur moins l'espace du gap */
+  min-width: 300px; /* Taille minimale pour éviter que les éléments deviennent trop petits */
+  height: auto; /* S'ajuste au contenu */
+  box-sizing: border-box; /* Inclut padding et border dans la largeur totale */
 }
