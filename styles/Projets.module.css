@@ -1,45 +1,88 @@
 .main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../public/r.jpeg');
-    background-position: center;
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    padding: 2rem 0;
-  }
-  
-  .title {
-    line-height: 1.15;
-    text-align: center;
-  }
-  
-  .center {
-    border: 1px solid white;
-    border-radius: 25px;
-    backdrop-filter: blur(25px);
-    width: 90%;
-    height: 100%;
-    color: white;
-    margin-right: 10px;
-  }
-  
-  .menu{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid white;
-    border-radius: 25px;
-    backdrop-filter: blur(25px);
-    height: 50%;
-    justify-content: space-around;
-    margin-right: 20px;
-    margin-left: 10px;
-  }
-  .icon{
-    color: white;
-    font-size: 22px;
-    padding: 10px;
-    cursor: pointer;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../public/r.jpeg');
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem 0;
+}
+
+.title {
+  line-height: 1.15;
+  text-align: center;
+}
+
+.center {
+  border: 1px solid white;
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
+  width: 90%;
+  height: 100%;
+  color: white;
+  margin-right: 10px;
+}
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
+  justify-content: space-around;
+  margin-bottom: 10px;
+  width: 90%;
+}
+.icon{
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 22px;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+.icon:hover{
+  background-color: rgb(100,121,105);
+}
+.icon::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 3rem; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(100,121,105); 
+  color: #fff; 
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.icon:hover::after {
+  opacity: 1; 
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; 
+  height: auto;
+  margin: 10px;
+}
+.profil, .texte {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 20px); 
+  min-width: 300px; 
+  height: auto; 
+  box-sizing: border-box; 
+}
