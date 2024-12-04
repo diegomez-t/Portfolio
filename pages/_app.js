@@ -12,7 +12,6 @@ function App({ Component, pageProps }) {
         <Header />
         <Component {...pageProps} />
       </div>
-
     </>
   );
 }

@@ -13,6 +13,18 @@
   color: white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 10px;
+}
+
+.projets{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  padding: 50px;
+  gap: 30px;
 }

@@ -1,18 +1,35 @@
 import styles from '../styles/Projets.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faFolderOpen, faNewspaper } from '@fortawesome/free-regular-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { useRouter } from 'next/router';
+import Projet from './Projet';
 
 function Projets() {
-  const router = useRouter();
+  const projetsData = [
+    {title: 'Morning News', img: '/img-morningnews.png',},
+    {title:'Star wars', img:'/img-starwars.png',},
+    {title:'Time Tracker', img:'/img-TimeTracker.png',},
+    {title:'To do list', img:'/img-todolist.png',},
+    {title: 'Morning News', img: '/img-morningnews.png',},
+    {title:'Star wars', img:'/img-starwars.png',},
+    {title:'Time Tracker', img:'/img-TimeTracker.png',},
+    {title:'To do list', img:'/img-todolist.png',},
+  ]
 
-  const handleNavigation = (path) => {
-    router.push(path);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1
   };
+
+  const projets = projetsData.map((data,i)=>{
+    return <Projet key={i} urlToImage={data.img} title={data.title}/>
+  })
+
   return (
     <div className={styles.main}>
-        <h1 className={styles.title}>Projets</h1>
+      <div className={styles.projets}>
+         {projets} 
+      </div>
     </div>
   );
 }
