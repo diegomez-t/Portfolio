@@ -12,39 +12,7 @@ function Social() {
   };
   return (
     <div className={styles.main}>
-        <nav className={styles.menu}>
-          <button
-            onClick={() => handleNavigation('/')}
-            data-title="Home"
-            className={styles.icon}
-          >
-            <FontAwesomeIcon icon={faNewspaper} />
-          </button>
-          <button
-            onClick={() => handleNavigation('/profil')}
-            data-title="CV"
-            className={styles.icon}
-          >
-            <FontAwesomeIcon icon={faUser} />
-          </button>
-          <button
-            onClick={() => handleNavigation('/projets')}
-            data-title="Projets"
-            className={styles.icon}
-          >
-            <FontAwesomeIcon icon={faFolderOpen} />
-          </button>
-          <button
-            onClick={() => handleNavigation('/social')}
-            data-title="Github"
-            className={styles.icon}
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </button>
-        </nav>
-        <div className={styles.center}>
-          <h1 className={styles.title}>Social</h1>
-        </div>
+      <h1 className={styles.title}>Social</h1>
     </div>
   );
 }
