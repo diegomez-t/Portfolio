@@ -3,6 +3,7 @@
   line-height: 1.15;
   text-align: center;
   width: 95%;
+  align-self: flex-start;
 }
 
 .main {
@@ -23,8 +24,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%; 
-  height: auto;
+  height: 100%;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 .left, .right {
   display: flex;
@@ -35,6 +38,7 @@
   box-sizing: border-box; 
 }
 .text{
+  margin: 10px 0px;
   width: 95%;
   height: 95%;
   text-align: center;
