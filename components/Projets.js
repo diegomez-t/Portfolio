@@ -15,10 +15,6 @@ function Projets() {
     {title:'Star wars', img:'/img-starwars.png',},
     {title:'Time Tracker', img:'/img-TimeTracker.png',},
     {title:'To do list', img:'/img-todolist.png',},
-    {title: 'Morning News', img: '/img-morningnews.png',},
-    {title:'Star wars', img:'/img-starwars.png',},
-    {title:'Time Tracker', img:'/img-TimeTracker.png',},
-    {title:'To do list', img:'/img-todolist.png',},
   ]
   
 
