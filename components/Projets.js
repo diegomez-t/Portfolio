@@ -37,7 +37,6 @@ function Projets() {
         modules={[Navigation, Pagination, A11y, EffectCoverflow]}
         slidesPerView={3}
         navigation
-        pagination={{ clickable: true }}
         loop={true}
         effect="coverflow"
         coverflowEffect={{
@@ -46,6 +45,7 @@ function Projets() {
           depth: 100, 
           modifier: 1,
         }}
+        style={{display:'flex', justifyContent:'center', alignItems: 'center'}}
       >
          {projets} 
       </Swiper>
