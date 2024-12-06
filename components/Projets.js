@@ -24,9 +24,8 @@ function Projets() {
 
   const projets = projetsData.map((data,i)=>{
     return (
-        <SwiperSlide className={styles.card} key={i}>
-            <Image src={data.img} alt={data.title} layout="responsive" width={100} height={70} className={styles.img}/>
-            <h4 className={styles.text}>{data.title}</h4>
+        <SwiperSlide className={styles.card} key={i} style={{ backgroundImage: `url(${data.img})`, display:'flex', flexDirection: 'column', justifyContent:'flex-end', alignItems: 'flex-start'}}>
+          <h4 className={styles.text}>{data.title}</h4>
         </SwiperSlide>
     )
   })
@@ -36,10 +35,10 @@ function Projets() {
       <Swiper  
         className={styles.projets}
         modules={[Navigation, Pagination, A11y, EffectCoverflow]}
-        spaceBetween={50}
         slidesPerView={3}
         navigation
         pagination={{ clickable: true }}
+        loop={true}
         effect="coverflow"
         coverflowEffect={{
           rotate: 50, 
