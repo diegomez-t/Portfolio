@@ -2,6 +2,7 @@ import styles from '../styles/Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faFolderOpen, faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Home, Person, Folder, GitHub } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 
 
@@ -15,31 +16,31 @@ function Header() {
     <nav className={styles.menu}>
         <button
         onClick={() => handleNavigation('/')}
-        data-title="Header"
+        data-title="Home"
         className={styles.icon}
         >
-        <FontAwesomeIcon icon={faNewspaper} />
+        <Home />
         </button>
         <button
         onClick={() => handleNavigation('/profil')}
         data-title="CV"
         className={styles.icon}
         >
-        <FontAwesomeIcon icon={faUser} />
+        <Person />
         </button>
         <button
         onClick={() => handleNavigation('/projets')}
         data-title="Projets"
         className={styles.icon}
         >
-        <FontAwesomeIcon icon={faFolderOpen} />
+        <Folder />
         </button>
         <button
         onClick={() => handleNavigation('/social')}
         data-title="Github"
         className={styles.icon}
         >
-        <FontAwesomeIcon icon={faGithub} />
+        <GitHub />
         </button>
     </nav>
   );
