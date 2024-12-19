@@ -1,12 +1,6 @@
 import styles from '../styles/Projets.module.css'
-import Image from 'next/image'
-import React, { useRef, useState } from 'react'
-import { Navigation, Pagination, A11y, EffectCoverflow } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+import React, { useEffect, useState } from 'react';
+import Immage from 'next/image'
 
 function Projets() {
 
@@ -16,35 +10,32 @@ function Projets() {
     {title:'Time Tracker', img:'/img-TimeTracker.png',},
     {title:'To do list', img:'/img-todolist.png',},
   ]
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % projetsData.length);
+    }, 3000);
+
+    return () => clearInterval(interval); // Clean up interval on component unmount
+  }, []);
   
 
   const projets = projetsData.map((data,i)=>{
     return (
-        <SwiperSlide className={styles.card} key={i} style={{ backgroundImage: `url(${data.img})`, display:'flex', flexDirection: 'column', justifyContent:'flex-end', alignItems: 'flex-start'}}>
+        <div className={styles.card} key={i}>
+          <Immage  src={data.img} alt={data.title} width={300} height={200}/>
           <h4 className={styles.text}>{data.title}</h4>
-        </SwiperSlide>
+        </div>
     )
   })
 
   return (
     <div className={styles.main}>
-      <Swiper  
-        className={styles.projets}
-        modules={[Navigation, Pagination, A11y, EffectCoverflow]}
-        slidesPerView={3}
-        navigation
-        loop={true}
-        effect="coverflow"
-        coverflowEffect={{
-          rotate: 50, 
-          stretch: 0, 
-          depth: 100, 
-          modifier: 1,
-        }}
-        style={{display:'flex', justifyContent:'center', alignItems: 'center'}}
-      >
+      <div className={styles.projets}>
          {projets} 
-      </Swiper>
+      </div>
     </div>
   )
 }
