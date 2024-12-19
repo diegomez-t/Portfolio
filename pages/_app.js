@@ -7,7 +7,7 @@ function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Portfolio Diego</title>
-        <link rel="icon" href="/logo.svg" alt="Logo" width={32} height={32} />
+        <link rel="icon" href="/logo_.png" alt="Logo" width={32} height={32} />
       </Head>
       <div className='body'>
         <Header />
