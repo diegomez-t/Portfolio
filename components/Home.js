@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faFolderOpen, faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
+import Image from 'next/image'; 
 
 
 function Home() {
@@ -12,7 +13,13 @@ function Home() {
       <div className={styles.content}>
         <div className={styles.left}>
           <h2 className={styles.text}>Diego GOMEZ TORRES</h2>
-          {/*photo*/}
+          <Image
+            src="/LA-CAPSULE_2024-11-28-445HD.jpg" // Chemin relatif depuis le répertoire public
+            alt="Portrait de Diego Gomez Torres"
+            width={400} // Largeur de l'image (ajustez selon vos besoins)
+            height={600} // Hauteur de l'image (ajustez selon vos besoins)
+            className={styles.image}
+          />
         </div>
         <div className={styles.right}>
           <h2 className={styles.text}>Diego est un développeur web et mobile full-stack</h2>

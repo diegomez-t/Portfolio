@@ -35,6 +35,7 @@
   flex-direction: column;
   flex: 1 1 calc(50% - 10px); 
   min-width: 300px;
+  min-height: 500px;
   height: auto; 
   box-sizing: border-box; 
 }
@@ -44,4 +45,9 @@
   height: 95%;
   text-align: center;
   align-self: center;
+}
+
+.image{
+  width: 400px;
+  height: 600px;
 }
