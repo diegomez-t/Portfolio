@@ -9,17 +9,19 @@ import Image from 'next/image';
 function Home() {
   return (
     <div className={styles.main}>
-      <h1 className={styles.title}>Créer des expériences digitales uniques, où la performance rencontre le design.</h1>
+      <h1 className={styles.title}>Diego GOMEZ TORRES</h1>
+      <h2 className={styles.text}>Créer des expériences digitales uniques, où la performance rencontre le design.</h2>
       <div className={styles.content}>
         <div className={styles.left}>
-          <h2 className={styles.text}>Diego GOMEZ TORRES</h2>
+          <div className={styles.image}>
           <Image
             src="/LA-CAPSULE_2024-11-28-445HD.jpg" // Chemin relatif depuis le répertoire public
             alt="Portrait de Diego Gomez Torres"
             width={400} // Largeur de l'image (ajustez selon vos besoins)
             height={600} // Hauteur de l'image (ajustez selon vos besoins)
-            className={styles.image}
+            className={styles.innerImage}
           />
+          </div>
         </div>
         <div className={styles.right}>
           <h2 className={styles.text}>Diego est un développeur web et mobile full-stack</h2>
