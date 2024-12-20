@@ -48,8 +48,15 @@
 }
 .text {
   text-transform: uppercase;
+  color: rgb(100,121,105);
+  padding: 10px;
+  margin-top: 5px;
+}
+.textI {
   color: black;
   padding: 10px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .img{
@@ -70,6 +77,7 @@
   letter-spacing: 1px;
   box-shadow: rgb(75, 91, 79) 0px 7px 2px, #000 0px 8px 5px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .button:hover {
@@ -79,4 +87,15 @@
 .button:active {
   top: 4px;
   box-shadow: rgb(75, 91, 79) 0px 3px 2px,#000 0px 3px 5px;
+}
+
+.title{
+  margin: 10px 0px;
+  text-align: center;
+  align-self: center;
+  color: #fff;
+}
+
+.card:hover{
+  transform: scale(1.05);
 }
