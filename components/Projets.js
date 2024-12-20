@@ -5,11 +5,11 @@ import Image from 'next/image';
 function Projets() {
 
   const projetsData = [
-    {title: 'Morning News', img: '/img-morningnews.png', link: 'https://morning-news-alpha.vercel.app', desc: 'MorningNews est une application qui permet de consulter les dernières actualités de Tech Crunch. Les utilisateurs peuvent visualiser les articles récents et sauvegarder leurs préférés. En se connectant à leur compte, ils peuvent facilement retrouver et accéder à leurs articles sauvegardés.'},
-    {title:'Star wars', img:'/img-starwars.png', desc: 'Cette application Star Wars permet aux utilisateurs de plonger dans l’univers de la saga tout en explorant de nouvelles façons de gérer le style dans React. En particulier, cette application met en œuvre une fonctionnalité de gestion dynamique du thème, avec un mode sombre pour offrir une expérience immersive et adaptée à tous les fans de Star Wars.'},
-    {title:'Time Tracker', img:'/img-TimeTracker.png',},
-    {title:'To do list', img:'/img-todolist.png',},
-    {title:'Memory game', img:'/memorygame.png', link: 'https://memorygame-two-sigma.vercel.app'},
+    {title: 'Morning News', img: '/img-morningnews.png', link: 'https://morning-news-alpha.vercel.app', desc: 'MorningNews permet de consulter les dernières actualités Tech Crunch, sauvegarder vos articles préférés, et les retrouver facilement grâce à un système de compte utilisateur et une interface intuitive.'},
+    {title:'Star wars', img:'/img-starwars.png', desc: 'Star Wars App offre une expérience immersive dans la saga grâce à une gestion dynamique du thème en React, incluant un mode sombre pour les fans de l’univers galactique.'},
+    {title:'Time Tracker', img:'/img-TimeTracker.png', desc: 'Le projet TimeTracker est une application qui permet de gérer plusieurs activités indépendantes, chacune avec son propre chronomètre, afin de suivre efficacement le temps passé sur différentes tâches.'},
+    {title:'To do list', img:'/img-todolist.png', desc: 'L\'application To Do List permet de gérer efficacement les tâches quotidiennes grâce à React et Redux. Elle offre des fonctionnalités avancées pour ajouter, organiser, et suivre vos activités avec flexibilité.'},
+    {title:'Memory game', img:'/memorygame.png', link: 'https://memorygame-two-sigma.vercel.app', desc: 'Le projet MemoryGame est un jeu de mémoire interactif qui utilise les concepts fondamentaux de React, tels que le cycle de vie des composants, la gestion des états, et l’inverse data flow.'},
   ]
 
   const projets = projetsData.map((data,i)=>{
@@ -17,7 +17,9 @@ function Projets() {
         <div className={styles.card} key={i}>
           <Image src={data.img} alt={data.title} width={310} height={200} className={styles.img}/>
           <p className={styles.text}>{data.title}</p>
-          <p className={styles.textI}>{data.desc}</p>
+          <div className={styles.boxText}>
+            <p className={styles.textI}>{data.desc}</p>
+          </div>
           <a href={data?.link} target="_blank" rel="noopener noreferrer">
             <button className={styles.button}>Aller à la page</button>
           </a>
