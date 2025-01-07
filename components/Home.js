@@ -15,10 +15,10 @@ function Home() {
         <div className={styles.left}>
           <div className={styles.image}>
           <Image
-            src="/LA-CAPSULE_2024-11-28-445HD.jpg" // Chemin relatif depuis le répertoire public
+            src="/LA-CAPSULE_2024-11-28-445HD.jpg"
             alt="Portrait de Diego Gomez Torres"
-            width={400} // Largeur de l'image (ajustez selon vos besoins)
-            height={600} // Hauteur de l'image (ajustez selon vos besoins)
+            width={400} 
+            height={600} 
             className={styles.innerImage}
           />
           </div>
