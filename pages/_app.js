@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function App({ Component, pageProps }) {
   return (
@@ -12,6 +13,7 @@ function App({ Component, pageProps }) {
       <div className='body'>
         <Header />
         <Component {...pageProps} />
+        <Footer/>
       </div>
     </>
   );
