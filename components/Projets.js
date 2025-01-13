@@ -21,7 +21,7 @@ function Projets() {
             <p className={styles.textI}>{data.desc}</p>
           </div>
           <a href={data?.link} target="_blank" rel="noopener noreferrer">
-            <button className={styles.button}>Aller à la page</button>
+            <button className={styles.button}>Voir plus</button>
           </a>
         </div>
     )
