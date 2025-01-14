@@ -2,6 +2,9 @@
 .title {
   line-height: 1.15;
   text-align: center;
+  width: 95%;
+  align-self: flex-start;
+  color: #1C3A63;
 }
 
 .main {
@@ -18,64 +21,18 @@
   padding: 10px;
 }
 
-.menu{
-  display: flex;
-  flex-direction: row;
-  border: 1px solid white;
-  border-radius: 25px;
-  backdrop-filter: blur(25px);
-  justify-content: space-around;
-  margin-bottom: 1rem;
-  width: 90%;
-  margin-top: 1rem;
-}
-.icon{
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 22px;
-  border-radius: 50%;
-  margin: 5px;
-  background-color: transparent;
-  border: none;
-  position: relative;
-}
-.icon:hover{
-  background-color: rgb(100,121,105);
-}
-.icon::after {
-  content: attr(data-title);
-  position: absolute;
-  bottom: -1rem; 
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(100,121,105); 
-  color: black;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  opacity: 0;
-  pointer-events: none; 
-  transition: opacity 0.2s ease-in-out;
-  white-space: nowrap;
+.subText {
+  margin: 10px 0px;
+  font-size: 20px;
+  color: #4A4A4A;
 }
 
-.icon:hover::after {
-  opacity: 1; 
+.text{
+  margin: 10px 0px;
+  color: #1C3A63;
 }
-.content{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%; 
-  height: auto;
-  margin: 10px;
-}
-.profil, .texte {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 calc(50% - 20px); 
-  min-width: 300px; 
-  height: auto; 
-  box-sizing: border-box; 
+
+.list {
+  list-style: disc;
+  margin-left: 20px; /* Pour ajouter un retrait */
 }

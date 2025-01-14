@@ -1,7 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Image from 'next/image'; 
 
-
 function Home() {
 
   const linksData = [
@@ -11,7 +10,7 @@ function Home() {
   ]
   const links = linksData.map((data, i) => {
     return (
-      <a href={data.href} target="_blank" className={styles.link}>
+      <a href={data.href} target="_blank" className={styles.link} key={i}>
           <Image
             src={data.src}
             alt={data.alt}

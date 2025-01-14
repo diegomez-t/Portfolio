@@ -2,6 +2,9 @@
 .title {
   line-height: 1.15;
   text-align: center;
+  width: 95%;
+  align-self: flex-start;
+  color: #1C3A63;
 }
 
 .main {
@@ -66,7 +69,6 @@
   background-color: #8CBF9E;
   color: #F7F9FC;
   position: relative;
-  width: 150px;
   border: none;
   padding: 1em;
   text-transform: uppercase;
@@ -87,12 +89,6 @@
   box-shadow: rgb(75, 91, 79) 0px 3px 2px,#000 0px 3px 5px;
 }
 
-.title{
-  margin: 10px 0px;
-  text-align: center;
-  align-self: center;
-  color: #1C3A63;
-}
 
 .card:hover{
   transform: scale(1.05);

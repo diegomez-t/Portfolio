@@ -1,8 +1,12 @@
 import styles from '../styles/Projets.module.css'
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import Image from 'next/image';
+import {Modal} from 'antd';
 
 function Projets() {
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
 
   const projetsData = [
     {title: 'Morning News', img: '/img-morningnews.png', link: 'https://morning-news-alpha.vercel.app', desc: 'MorningNews permet de consulter les dernières actualités Tech Crunch, sauvegarder vos articles préférés, et les retrouver facilement grâce à un système de compte utilisateur et une interface intuitive.'},
@@ -12,6 +16,22 @@ function Projets() {
     {title:'Memory game', img:'/memorygame.png', link: 'https://memorygame-two-sigma.vercel.app', desc: 'Le projet MemoryGame est un jeu de mémoire interactif qui utilise les concepts fondamentaux de React, tels que le cycle de vie des composants, la gestion des états, et l’inverse data flow.'},
   ]
 
+  const showModal = (project) => {
+    setCurrentProject(project);
+    setOpen(true);
+  };
+  const handleCancel = () => {
+    setOpen(false);
+  };
+
+  const handleOk = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpen(false);
+    }, 3000);
+  };
+
   const projets = projetsData.map((data,i)=>{
     return (
         <div className={styles.card} key={i}>
@@ -20,16 +40,28 @@ function Projets() {
           <div className={styles.boxText}>
             <p className={styles.textI}>{data.desc}</p>
           </div>
-          <a href={data?.link} target="_blank" rel="noopener noreferrer">
-            <button className={styles.button}>Voir plus</button>
-          </a>
+          <button className={styles.button} onClick={() => showModal(data)}>Voir plus</button>
+          <Modal
+            open={open}
+            onOk={handleOk}
+            onCancel={handleCancel}
+            footer={[
+              <a href={currentProject?.link} target="_blank" rel="noopener noreferrer" loading={loading}>
+                <button className={styles.button} onClick={handleOk}>Aller sur la page</button>
+              </a>,
+            ]}
+          >
+            <p className={styles.text}>{currentProject?.title}</p>
+            <p className={styles.textI}>{currentProject?.desc}</p>
+            <Image src={currentProject?.img} alt={currentProject?.title} width={310} height={200} className={styles.img}/>
+          </Modal>
         </div>
     )
   })
 
   return (
     <div className={styles.main}>
-      <h2 className={styles.title}>Pages web</h2>
+      <h1 className={styles.title}>Pages web</h1>
       <div className={styles.projets}>
          {projets} 
       </div>
