@@ -1,6 +1,5 @@
 import styles from '../styles/Header.module.css';
 import {Modal} from 'antd';
-import { Menu } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import React, { useState } from "react";
 
@@ -55,7 +54,7 @@ const handleCancel = () => {
           className={styles.mobileMenuButton} 
           onClick={showModal}
         >
-          <Menu />
+          {isModalOpen ? "Fermer" : "Menu"}
       </button>
       <nav className={`${styles.menu} ${styles.desktopMenu}`}>
         {menu}
