@@ -1,11 +1,13 @@
 import styles from '../styles/Header.module.css';
-import { Home, Person, Folder, GitHub } from '@mui/icons-material';
+import {Modal} from 'antd';
+import { Menu } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import React, { useState } from "react";
 
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const menuData = [
     {href: "/", lebel:'Home'},
     {href: '/projets', lebel:'Projets'},
@@ -14,18 +16,31 @@ function Header() {
   ]
   const router = useRouter();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   const handleNavigation = (path) => {
     router.push(path);
   };
+
+
+const showModal = () => {
+  setIsModalOpen(true);
+};
+
+const handleOk = () => {
+  setIsModalOpen(false);
+};
+
+const handleCancel = () => {
+  setIsModalOpen(false);
+};
   const menu = menuData.map((data, i) => {
     return (
       <button
         key={i}
-        onClick={() => handleNavigation(data.href)}
+        onClick={() => {
+          handleNavigation(data.href)
+          handleCancel()
+        }}
         data-title={data.lebel}
         className={styles.icon}
       >
@@ -36,12 +51,26 @@ function Header() {
   return (
     <div className={styles.header}>
       <h1 className={styles.title}>Diego</h1>
-      <nav className={styles.menu}>
+      <button 
+          className={styles.mobileMenuButton} 
+          onClick={showModal}
+        >
+          <Menu />
+      </button>
+      <nav className={`${styles.menu} ${styles.desktopMenu}`}>
         {menu}
       </nav>
-          <button className={styles.contact}>
-          Contact
-          </button>
+      <Modal 
+        open={isModalOpen} 
+        onOk={handleOk} 
+        onCancel={handleCancel}
+        footer={(
+          <button className={styles.mobileMenuButton} onClick={handleCancel}>Fermer</button>
+        )}
+      >
+        {menu}
+      </Modal>
+      <button className={styles.contact}>Contact</button>
     </div>
   );
 }

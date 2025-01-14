@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    min-height: auto;
     background-color: #1C3A63;  
     padding: 1rem;
 }
@@ -55,4 +56,62 @@
   .contact:active {
     top: 4px;
     box-shadow: rgb(75, 91, 79) 0px 3px 2px,#000 0px 3px 5px;
+  }
+  .desktopMenu {
+    display: none;
+  }
+  .mobileMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 10;
+    width: 200px;
+  }
+  .mobileMenu.active {
+    display: flex;
+  }
+  .mobileMenuButton {
+    display: none;
+    background-color: #8CBF9E;
+    color: #F7F9FC;
+    position: relative;
+    width: 150px;
+    border: none;
+    padding: 1em;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    box-shadow: #6F908A 0px 7px 2px, #000 0px 8px 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 768px) {
+    .desktopMenu {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    .mobileMenuButton {
+      display: none;
+    }
+  
+    .mobileMenu {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mobileMenuButton {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+    }
   }
