@@ -120,7 +120,10 @@
   
   @media (max-width: 768px) {
     .mobileMenuButton {
-      display: block;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
     }
     .icon{
       color: #1C3A63;

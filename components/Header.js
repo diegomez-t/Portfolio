@@ -3,7 +3,7 @@ import {Modal} from 'antd';
 import { useRouter } from 'next/router';
 import React, { useState } from "react";
 import Image from 'next/image';
-import { Home, Person, Folder, DoneAll, Mail } from '@mui/icons-material';
+import { Home, Person, Folder, DoneAll, Mail, Menu } from '@mui/icons-material';
 
 
 function Header() {
@@ -58,7 +58,7 @@ const handleCancel = () => {
           className={styles.mobileMenuButton} 
           onClick={showModal}
         >
-          {isModalOpen ? "Fermer" : "Menu"}
+          <Menu/>{isModalOpen ? "Fermer" : "Menu"}
       </button>
       <nav className={`${styles.menu} ${styles.desktopMenu}`}>
         {menu}
