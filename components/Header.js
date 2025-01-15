@@ -9,7 +9,7 @@ function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const menuData = [
-    {href: "/", lebel:'Home'},
+    {href: "/", lebel:'Accueil'},
     {href: '/projets', lebel:'Projets'},
     {href: "/profil", lebel:'Information'},
     {href: "/social", lebel:'Services'},
