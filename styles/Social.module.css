@@ -2,18 +2,33 @@
 .title {
   line-height: 1.15;
   text-align: center;
+  width: 95%;
+  height: auto;
+  align-self: flex-start;
+  color: #1C3A63;
 }
 
 .main {
-  border: 1px solid white;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.1);
   width: 100%;
   height: 100%;
-  color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
+  background-color: #F7F9FC;
+  overflow: auto;
+}
+
+.text{
+  margin: 10px 0px;
+  color: #1C3A63;
+}
+.list {
+  list-style: disc;
+  margin-left: 20px; /* Pour ajouter un retrait */
+}
+.subText {
+  margin: 10px 0px;
+  font-size: 20px;
+  color: #4A4A4A;
 }

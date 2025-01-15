@@ -3,6 +3,7 @@
   line-height: 1.15;
   text-align: center;
   width: 95%;
+  height: auto;
   align-self: flex-start;
   color: #1C3A63;
 }
@@ -16,6 +17,7 @@
   align-items: center;
   padding: 10px;
   background-color: #F7F9FC;
+  overflow: auto;
 }
 
 .projets{

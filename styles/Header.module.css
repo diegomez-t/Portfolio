@@ -37,7 +37,7 @@
     background-color: #8CBF9E;
     color: #F7F9FC;
     position: relative;
-    width: 150px;
+    width: auto;
     border: none;
     padding: 1em;
     text-transform: uppercase;
@@ -79,7 +79,7 @@
     background-color: #8CBF9E;
     color: #F7F9FC;
     position: relative;
-    width: 150px;
+    width: auto;
     border: none;
     padding: 1em;
     text-transform: uppercase;
@@ -109,6 +109,9 @@
   @media (max-width: 768px) {
     .mobileMenuButton {
       display: block;
+    }
+    .icon{
+      color: #1C3A63;
     }
   
     .menu {
