@@ -2,6 +2,7 @@ import styles from '../styles/Header.module.css';
 import {Modal} from 'antd';
 import { useRouter } from 'next/router';
 import React, { useState } from "react";
+import Image from 'next/image';
 
 
 function Header() {
@@ -49,7 +50,7 @@ const handleCancel = () => {
   })  
   return (
     <div className={styles.header}>
-      <h1 className={styles.title}>Diego</h1>
+      <Image src='/logo_.png' alt='Logo' width={50} height={50}/>
       <button 
           className={styles.mobileMenuButton} 
           onClick={showModal}
@@ -63,9 +64,7 @@ const handleCancel = () => {
         open={isModalOpen} 
         onOk={handleOk} 
         onCancel={handleCancel}
-        footer={(
-          <button className={styles.mobileMenuButton} onClick={handleCancel}>Fermer</button>
-        )}
+        footer={null}
       >
         {menu}
       </Modal>

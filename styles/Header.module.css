@@ -38,6 +38,7 @@
     color: #F7F9FC;
     position: relative;
     width: auto;
+    font-size: 14px;
     border: none;
     padding: 1em;
     text-transform: uppercase;
@@ -78,6 +79,7 @@
     display: none;
     background-color: #8CBF9E;
     color: #F7F9FC;
+    font-size: 14px;
     position: relative;
     width: auto;
     border: none;
