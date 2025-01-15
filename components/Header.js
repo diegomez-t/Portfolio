@@ -3,16 +3,17 @@ import {Modal} from 'antd';
 import { useRouter } from 'next/router';
 import React, { useState } from "react";
 import Image from 'next/image';
+import { Home, Person, Folder, DoneAll, Mail } from '@mui/icons-material';
 
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const menuData = [
-    {href: "/", lebel:'Accueil'},
-    {href: '/projets', lebel:'Projets'},
-    {href: "/profil", lebel:'Information'},
-    {href: "/social", lebel:'Services'},
+    {href: "/", label:'Accueil', icon: Home},
+    {href: '/projets', label:'Projets', icon: Folder},
+    {href: "/profil", label:'Information', icon: Person},
+    {href: "/social", label:'Services', icon: DoneAll},
   ]
   const router = useRouter();
 
@@ -30,9 +31,11 @@ const handleOk = () => {
   setIsModalOpen(false);
 };
 
+
 const handleCancel = () => {
   setIsModalOpen(false);
 };
+
   const menu = menuData.map((data, i) => {
     return (
       <button
@@ -41,10 +44,10 @@ const handleCancel = () => {
           handleNavigation(data.href)
           handleCancel()
         }}
-        data-title={data.lebel}
+        data-title={data.label}
         className={styles.icon}
       >
-        {data.lebel}
+        <data.icon />{data.label}
       </button>
     );
   })  
@@ -68,7 +71,9 @@ const handleCancel = () => {
       >
         {menu}
       </Modal>
-      <button className={styles.contact}>Contact</button>
+      <a href="mailto:gomeztorres.diegoandres@gmail.com?subject=Demande%20d'information%20concernant%20les%20services%20de%20développement%20web/mobile%20full-stack&body=Bonjour%20Monsieur%20GOMEZ,%0A%0AVotre%20message...%0A%0ACordialement,%0A[Votre%20nom]" style={{ textDecoration: 'none' }}>
+        <button className={styles.contact}><Mail/>Contact</button>
+      </a>
     </div>
   );
 }

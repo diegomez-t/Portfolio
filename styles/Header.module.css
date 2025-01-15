@@ -21,6 +21,10 @@
   }
   .icon{
     color: #F7F9FC;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     padding: 10px;
     font-size: 22px;
@@ -29,6 +33,7 @@
     background-color: transparent;
     border: none;
     position: relative;
+    gap: 8px;
   }
   .icon:hover {
     color: #A8B2D1;
@@ -36,6 +41,10 @@
   .contact {
     background-color: #8CBF9E;
     color: #F7F9FC;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: auto;
     font-size: 14px;
@@ -48,6 +57,7 @@
     box-shadow: #6F908A 0px 7px 2px, #000 0px 8px 5px;
     cursor: pointer;
     margin-bottom: 10px;
+    gap: 8px;
   }
 
   .contact:hover {
