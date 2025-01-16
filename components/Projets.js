@@ -8,7 +8,7 @@ function Projets() {
   const [open, setOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
 
-  const projetsData = [
+  const projetsWebData = [
     {
       title: 'Morning News', 
       techs:['React', 'Redux', 'Redux-Persist', 'JavaScript (ES6+)', 'CSS', 'Node.js et Yarn', 'Express.js', 'Nodemon'], 
@@ -47,6 +47,14 @@ function Projets() {
       desc: 'Le projet MemoryGame est un jeu de mémoire interactif qui utilise les concepts fondamentaux de React, tels que le cycle de vie des composants, la gestion des états, et l’inverse data flow.',
     },
   ]
+  const projetsMobileData = [
+    {
+      title: 'Locapic',
+      techs: ['React Native', 'Expo', 'JavaScript (ES6+)', 'Redux', 'Fetch API', 'Node.js et Yarn', 'Express.js', 'Mongoose', 'MongoDB'],
+      imgs: ['/IMG_9050.PNG', '/IMG_9053.PNG', '/IMG_9054.PNG', '/IMG_9055.PNG', '/IMG_9056.PNG',],
+      desc:'Locapic est une app mobile qui géolocalise l\'utilisateur, trace ses déplacements sur une carte interactive, et permet d\'ajouter des points d\'intérêt pour les retrouver facilement.',
+    },
+  ]
 
   const showModal = (project) => {
     setCurrentProject(project);
@@ -64,7 +72,7 @@ function Projets() {
     }, 3000);
   };
 
-  const projets = projetsData.map((data,i)=>{
+  const projets = projetsWebData.map((data,i)=>{
     return (
         <div className={styles.card} key={i}>
           <Image src={data.img} alt={data.title} width={310} height={200} className={styles.img}/>
