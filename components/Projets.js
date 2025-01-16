@@ -7,6 +7,8 @@ function Projets() {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
+  const [currentProjectMobile, setCurrentProjectMobile] = useState(null)
+  const [openMobile, setOpenMobile] = useState(false);
 
   const projetsWebData = [
     {
@@ -72,6 +74,22 @@ function Projets() {
     }, 3000);
   };
 
+  const showModalMobile = (project) => {
+    setCurrentProjectMobile(project);
+    setOpenMobile(true);
+  };
+  const handleCancelMobile = () => {
+    setOpenMobile(false);
+  };
+
+  const handleOkMobile = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpenMobile(false);
+    }, 3000);
+  };
+
   const projets = projetsWebData.map((data,i)=>{
     return (
         <div className={styles.card} key={i}>
@@ -84,12 +102,30 @@ function Projets() {
         </div>
     )
   })
+  const projetsMobiles = projetsMobileData.map((data,i)=>{
+    return (
+      <div className={styles.card} key={i}>
+        {data.imgs.length > 0 && (
+          <Image src={data.imgs[0]} alt={data.title} width={180} height={310} className={styles.img}/>
+        )}
+        <p className={styles.text}>{data.title}</p>
+        <div className={styles.boxText}>
+          <p className={styles.textI}>{data.desc}</p>
+        </div>
+        <button className={styles.button} onClick={() => showModalMobile(data)}>Voir plus</button>
+      </div>
+    )
+  })
 
   return (
     <div className={styles.main}>
-      <h1 className={styles.title}>Pages web</h1>
+      <h1 className={styles.title}>Applications webs</h1>
       <div className={styles.projets}>
          {projets} 
+      </div>
+      <h1 className={styles.title}>Applications mobiles</h1>
+      <div className={styles.projets}>
+        {projetsMobiles}
       </div>
       {currentProject && (
         <Modal
@@ -120,6 +156,35 @@ function Projets() {
             {currentProject?.img2 && (
               <Image src={currentProject?.img2} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
             )}
+          </div>
+        </Modal>
+      )}
+      {currentProjectMobile && (
+        <Modal
+          open={openMobile}
+          onOk={handleOkMobile}
+          onCancel={handleCancelMobile}
+          footer={[]}
+          bodyStyle={{ maxHeight: '70vh', overflowY: 'auto', padding: '10px'}}
+        >
+          <h1 className={styles.textModal}>{currentProjectMobile?.title}</h1>
+          <p className={styles.textInnerModal}>{currentProjectMobile?.desc}</p>
+          {currentProjectMobile?.techs?.length > 0 && (
+            <>
+              <h3 className={styles.textModal}>Technologies utilisées</h3>
+              <ul className={styles.list}>
+                {currentProjectMobile?.techs?.map((tech, i) => (
+                  <li key={i} className={styles.subText}>{tech}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          <div className={styles.images}>
+            {currentProjectMobile?.imgs.map((img, i)=>{
+              return (
+                <Image key={i} src={img} alt={currentProjectMobile?.title} width={180} height={310} className={styles.imgModal}/>
+              )
+            })}
           </div>
         </Modal>
       )}
