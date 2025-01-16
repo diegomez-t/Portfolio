@@ -72,36 +72,6 @@ function Projets() {
             <p className={styles.textI}>{data.desc}</p>
           </div>
           <button className={styles.button} onClick={() => showModal(data)}>Voir plus</button>
-          <Modal
-            open={open}
-            onOk={handleOk}
-            onCancel={handleCancel}
-            footer={[
-              <a href={currentProject?.link} target="_blank" rel="noopener noreferrer" loading={loading}>
-                <button className={styles.button} onClick={handleOk}>Aller sur la page</button>
-              </a>,
-            ]}
-            style={{ height:'85%', overflow: 'auto',}}
-          >
-            <h1 className={styles.textModal}>{currentProject?.title}</h1>
-            <p className={styles.textInnerModal}>{currentProject?.desc}</p>
-            {currentProject?.techs?.length > 0 && (
-              <>
-                <h3 className={styles.textModal}>Technologies utilisées</h3>
-                <ul className={styles.list}>
-                  {currentProject?.techs?.map((tech, i) => (
-                    <li key={i} className={styles.subText}>{tech}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-            <div className={styles.images}>
-              <Image src={currentProject?.img} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
-              {currentProject?.img2 && (
-                <Image src={currentProject?.img2} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
-              )}
-            </div>
-          </Modal>
         </div>
     )
   })
@@ -112,6 +82,38 @@ function Projets() {
       <div className={styles.projets}>
          {projets} 
       </div>
+      {currentProject && (
+        <Modal
+          open={open}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          footer={[
+            <a href={currentProject?.link} target="_blank" rel="noopener noreferrer" loading={loading}>
+              <button className={styles.button} onClick={handleOk}>Aller sur la page</button>
+            </a>,
+          ]}
+          style={{ height:'85%', overflow: 'auto',}}
+        >
+          <h1 className={styles.textModal}>{currentProject?.title}</h1>
+          <p className={styles.textInnerModal}>{currentProject?.desc}</p>
+          {currentProject?.techs?.length > 0 && (
+            <>
+              <h3 className={styles.textModal}>Technologies utilisées</h3>
+              <ul className={styles.list}>
+                {currentProject?.techs?.map((tech, i) => (
+                  <li key={i} className={styles.subText}>{tech}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          <div className={styles.images}>
+            <Image src={currentProject?.img} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
+            {currentProject?.img2 && (
+              <Image src={currentProject?.img2} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
+            )}
+          </div>
+        </Modal>
+      )}
     </div>
   )
 }
