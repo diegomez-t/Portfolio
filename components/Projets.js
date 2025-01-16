@@ -92,7 +92,7 @@ function Projets() {
               <button className={styles.button} onClick={handleOk}>Aller sur la page</button>
             </a>,
           ]}
-          style={{ height:'85%', overflow: 'auto',}}
+          style={{ maxHeight: '80vh', overflowY: 'auto', padding: '10px'}}
         >
           <h1 className={styles.textModal}>{currentProject?.title}</h1>
           <p className={styles.textInnerModal}>{currentProject?.desc}</p>
