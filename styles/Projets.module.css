@@ -100,3 +100,30 @@
   width: 100%;
   height: 160px;
 }
+
+.textModal {
+  color: #1C3A63;
+  padding: 10px;
+  font-weight: 800;
+  margin-bottom: 0px;
+}
+.textInnerModal{
+  color: #4A4A4A;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+.imgModal{
+  border-radius: 15px;
+  align-self: center;
+}
+.images{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.modal{
+  overflow: auto;
+}
