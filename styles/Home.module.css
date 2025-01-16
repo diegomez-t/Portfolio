@@ -1,11 +1,4 @@
 
-.title {
-  line-height: 1.15;
-  text-align: center;
-  width: 95%;
-  align-self: flex-start;
-  color: #1C3A63;
-}
 
 .main {
   width: 100%;
@@ -35,6 +28,9 @@
   min-width: 300px;
   height: auto; 
   box-sizing: border-box; 
+  opacity: 0;
+  transform: translateY(-20px); 
+  animation: fadeInFromTop 1s ease-in-out forwards; 
 }
 .text{
   margin: 10px 0px;
@@ -72,4 +68,24 @@
 }
 .link{
   margin: 10px;
+}
+.title {
+  line-height: 1.15;
+  text-align: center;
+  width: 95%;
+  align-self: flex-start;
+  color: #1C3A63;
+  opacity: 0; 
+  transform: translateY(-20px); 
+  animation: fadeInFromTop 1s ease-in-out forwards; 
+}
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

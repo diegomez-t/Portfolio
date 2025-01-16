@@ -6,6 +6,9 @@
   height: auto;
   align-self: flex-start;
   color: #1C3A63;
+  opacity: 0; 
+  transform: translateY(-20px); 
+  animation: fadeInFromTop 1s ease-in-out forwards; 
 }
 
 .main {
@@ -30,6 +33,9 @@
   flex-wrap: wrap;
   overflow-y: auto;
   gap: 20px;
+  opacity: 0; 
+  transform: translateY(-20px); 
+  animation: fadeInFromTop 1s ease-in-out forwards; 
 }
 
 .card{
@@ -135,4 +141,14 @@
 }
 .subText {
   color: #4A4A4A;
+}
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
