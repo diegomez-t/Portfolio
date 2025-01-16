@@ -9,11 +9,42 @@ function Projets() {
   const [currentProject, setCurrentProject] = useState(null);
 
   const projetsData = [
-    {title: 'Morning News', img: '/img-morningnews.png', img2:'/morningnews2.png', link: 'https://morning-news-alpha.vercel.app', desc: 'MorningNews permet de consulter les dernières actualités Tech Crunch, sauvegarder vos articles préférés, et les retrouver facilement grâce à un système de compte utilisateur et une interface intuitive.'},
-    {title:'Star wars', img:'/img-starwars.png', img2:'/themestarwars2.png', link: 'https://starwars-theme.vercel.app', desc: 'Star Wars App offre une expérience immersive dans la saga grâce à une gestion dynamique du thème en React, incluant un mode sombre pour les fans de l’univers galactique.'},
-    {title:'Time Tracker', img:'/img-TimeTracker.png', img2:'/', desc: 'Le projet TimeTracker est une application qui permet de gérer plusieurs activités indépendantes, chacune avec son propre chronomètre, afin de suivre efficacement le temps passé sur différentes tâches.'},
-    {title:'To do list', img:'/img-todolist.png',  desc: 'L\'application To Do List permet de gérer efficacement les tâches quotidiennes grâce à React et Redux. Elle offre des fonctionnalités avancées pour ajouter, organiser, et suivre vos activités avec flexibilité.'},
-    {title:'Memory game', img:'/memorygame.png', img2:'/memorygame2.png', link: 'https://memorygame-two-sigma.vercel.app', desc: 'Le projet MemoryGame est un jeu de mémoire interactif qui utilise les concepts fondamentaux de React, tels que le cycle de vie des composants, la gestion des états, et l’inverse data flow.'},
+    {
+      title: 'Morning News', 
+      techs:['React', 'Redux', 'Redux-Persist', 'JavaScript (ES6+)', 'CSS', 'Node.js et Yarn', 'Express.js', 'Nodemon'], 
+      img: '/img-morningnews.png', 
+      img2:'/morningnews2.png', 
+      link: 'https://morning-news-alpha.vercel.app', 
+      desc: 'MorningNews permet de consulter les dernières actualités Tech Crunch, sauvegarder vos articles préférés, et les retrouver facilement grâce à un système de compte utilisateur et une interface intuitive.',
+    },
+    {
+      title:'Star wars', 
+      techs:['React', 'Tailwind CSS', 'JavaScript (ES6+)'], 
+      img:'/img-starwars.png', 
+      img2:'/themestarwars2.png', 
+      link: 'https://starwars-theme.vercel.app', 
+      desc: 'Star Wars App offre une expérience immersive dans la saga grâce à une gestion dynamique du thème en React, incluant un mode sombre pour les fans de l’univers galactique.',
+    },
+    {
+      title:'Time Tracker', 
+      techs:['React', 'Redux', 'Redux-Persist', 'JavaScript (ES6+)', 'CSS'], 
+      img:'/img-TimeTracker.png', 
+      desc: 'Le projet TimeTracker est une application qui permet de gérer plusieurs activités indépendantes, chacune avec son propre chronomètre, afin de suivre efficacement le temps passé sur différentes tâches.',
+    },
+    {
+      title:'To do list', 
+      techs:['React', 'Redux', 'JavaScript (ES6+)', 'CSS'], 
+      img:'/img-todolist.png', 
+      desc: 'L\'application To Do List permet de gérer efficacement les tâches quotidiennes grâce à React et Redux. Elle offre des fonctionnalités avancées pour ajouter, organiser, et suivre vos activités avec flexibilité.'
+    },
+    {
+      title:'Memory game', 
+      techs:['React', 'JavaScript (ES6+)', 'CSS', 'Node.js et Yarn'], 
+      img:'/memorygame.png', 
+      img2:'/memorygame2.png', 
+      link: 'https://memorygame-two-sigma.vercel.app', 
+      desc: 'Le projet MemoryGame est un jeu de mémoire interactif qui utilise les concepts fondamentaux de React, tels que le cycle de vie des composants, la gestion des états, et l’inverse data flow.',
+    },
   ]
 
   const showModal = (project) => {
@@ -50,14 +81,25 @@ function Projets() {
                 <button className={styles.button} onClick={handleOk}>Aller sur la page</button>
               </a>,
             ]}
-            className={styles.modal}
+            style={{ height:'85%', overflow: 'auto',}}
           >
             <h1 className={styles.textModal}>{currentProject?.title}</h1>
             <p className={styles.textInnerModal}>{currentProject?.desc}</p>
-            <h3 className={styles.textModal}>Technologies utilisées</h3>
+            {currentProject?.techs?.length > 0 && (
+              <>
+                <h3 className={styles.textModal}>Technologies utilisées</h3>
+                <ul className={styles.list}>
+                  {currentProject?.techs?.map((tech, i) => (
+                    <li key={i} className={styles.subText}>{tech}</li>
+                  ))}
+                </ul>
+              </>
+            )}
             <div className={styles.images}>
               <Image src={currentProject?.img} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
-              <Image src={currentProject?.img2} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
+              {currentProject?.img2 && (
+                <Image src={currentProject?.img2} alt={currentProject?.title} width={310} height={200} className={styles.imgModal}/>
+              )}
             </div>
           </Modal>
         </div>

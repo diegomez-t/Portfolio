@@ -125,5 +125,14 @@
   gap: 10px;
 }
 .modal{
+  height: 100%;
   overflow: auto;
+}
+
+.list {
+  list-style: disc;
+  margin-left: 25px; 
+}
+.subText {
+  color: #4A4A4A;
 }
