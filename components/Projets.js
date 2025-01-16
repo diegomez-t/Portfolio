@@ -29,6 +29,7 @@ function Projets() {
       title:'Time Tracker', 
       techs:['React', 'Redux', 'Redux-Persist', 'JavaScript (ES6+)', 'CSS'], 
       img:'/img-TimeTracker.png', 
+      link:'https://time-tracker-roan-seven.vercel.app',
       desc: 'Le projet TimeTracker est une application qui permet de gérer plusieurs activités indépendantes, chacune avec son propre chronomètre, afin de suivre efficacement le temps passé sur différentes tâches.',
     },
     {
