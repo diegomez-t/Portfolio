@@ -53,7 +53,8 @@ function Projets() {
     {
       title: 'Locapic',
       techs: ['React Native', 'Expo', 'JavaScript (ES6+)', 'Redux', 'Fetch API', 'Node.js et Yarn', 'Express.js', 'Mongoose', 'MongoDB'],
-      imgs: ['/IMG_9050.PNG', '/IMG_9053.PNG', '/IMG_9054.PNG', '/IMG_9055.PNG', '/IMG_9056.PNG',],
+      img: '/Locapic.PNG',
+      video:'/Video_Locapic.MP4', 
       desc:'Locapic est une app mobile qui géolocalise l\'utilisateur, trace ses déplacements sur une carte interactive, et permet d\'ajouter des points d\'intérêt pour les retrouver facilement.',
     },
   ]
@@ -105,9 +106,7 @@ function Projets() {
   const projetsMobiles = projetsMobileData.map((data,i)=>{
     return (
       <div className={styles.card} key={i}>
-        {data.imgs.length > 0 && (
-          <Image src={data.imgs[0]} alt={data.title} width={180} height={310} className={styles.img}/>
-        )}
+        <Image src={data.img} alt={data.title} width={180} height={310} className={styles.img}/>
         <p className={styles.text}>{data.title}</p>
         <div className={styles.boxText}>
           <p className={styles.textI}>{data.desc}</p>
@@ -180,11 +179,12 @@ function Projets() {
             </>
           )}
           <div className={styles.images}>
-            {currentProjectMobile?.imgs.map((img, i)=>{
-              return (
-                <Image key={i} src={img} alt={currentProjectMobile?.title} width={180} height={310} className={styles.imgModal}/>
-              )
-            })}
+            {currentProjectMobile?.video && (
+              <video controls width="60%" style={{ maxHeight: '300px' }}>
+                <source src={currentProjectMobile?.video} type="video/mp4" />
+                Votre navigateur ne prend pas en charge la vidéo.
+              </video>
+            )}
           </div>
         </Modal>
       )}
