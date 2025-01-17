@@ -180,7 +180,7 @@ function Projets() {
           )}
           <div className={styles.images}>
             {currentProjectMobile?.video && (
-              <video controls width="60%" style={{ maxHeight: '300px' }}>
+              <video controls width="100%" style={{ maxHeight: '300px' }}>
                 <source src={currentProjectMobile?.video} type="video/mp4" />
                 Votre navigateur ne prend pas en charge la vidéo.
               </video>
