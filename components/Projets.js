@@ -57,6 +57,12 @@ function Projets() {
       video:'/Video_Locapic.MP4', 
       desc:'Locapic est une app mobile qui géolocalise l\'utilisateur, trace ses déplacements sur une carte interactive, et permet d\'ajouter des points d\'intérêt pour les retrouver facilement.',
     },
+    {
+      title: 'OufWouf!',
+      techs: ['React Native', 'Expo', 'JavaScript (ES6+)', 'Redux', 'Fetch API', 'Node.js et Yarn', 'Express.js', 'Mongoose', 'MongoDB', 'Cloudinary', 'bcrypt', 'uid2', 'Jest'],
+      img: '/OufWouf.PNG', 
+      desc: 'OufWouf simplifie la vie des propriétaires de chiens en offrant une application mobile pour trouver vétérinaires, boutiques, parcs et plus à proximité, répondant à tous les besoins pour le bien-être de leur compagnon.'
+    }
   ]
 
   const showModal = (project) => {
