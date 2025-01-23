@@ -61,6 +61,7 @@ function Projets() {
       title: 'OufWouf!',
       techs: ['React Native', 'Expo', 'JavaScript (ES6+)', 'Redux', 'Fetch API', 'Node.js et Yarn', 'Express.js', 'Mongoose', 'MongoDB', 'Cloudinary', 'bcrypt', 'uid2', 'Jest'],
       img: '/OufWouf.PNG', 
+      video:'/Video_OufWouf.mp4',
       desc: 'OufWouf simplifie la vie des propriétaires de chiens en offrant une application mobile pour trouver vétérinaires, boutiques, parcs et plus à proximité, répondant à tous les besoins pour le bien-être de leur compagnon.'
     }
   ]
