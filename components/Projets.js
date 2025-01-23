@@ -35,12 +35,6 @@ function Projets() {
       desc: 'Le projet TimeTracker est une application qui permet de gérer plusieurs activités indépendantes, chacune avec son propre chronomètre, afin de suivre efficacement le temps passé sur différentes tâches.',
     },
     {
-      title:'To do list', 
-      techs:['React', 'Redux', 'JavaScript (ES6+)', 'CSS'], 
-      img:'/img-todolist.png', 
-      desc: 'L\'application To Do List permet de gérer efficacement les tâches quotidiennes grâce à React et Redux. Elle offre des fonctionnalités avancées pour ajouter, organiser, et suivre vos activités avec flexibilité.'
-    },
-    {
       title:'Memory game', 
       techs:['React', 'JavaScript (ES6+)', 'CSS', 'Node.js et Yarn'], 
       img:'/memorygame.png', 
